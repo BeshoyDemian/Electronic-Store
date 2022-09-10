@@ -1,0 +1,13 @@
+<div class="cart-item">
+  <span>{{ cartItem.productName }}</span> x
+  <span>{{ cartItem.qty }}</span>:
+  <!-- <strong>{{ *ngIf="cartItem.qty > 1 (cartItem.qty * cartItem.price ): ( cartItem.qty * cartItem.price * cartItem.discountPercentage ) | currency:'USD':true  }}</strong> -->
+  
+  <div *ngIf=" cartItem.qty == 1; else MoreThan1">
+    <strong>{{ (cartItem.qty * cartItem.price )| currency:'USD':true  }}</strong>
+    </div>
+  
+  <ng-template #MoreThan1>
+    <strong>{{ ( (cartItem.qty * cartItem.price )- ((cartItem.discountPercentage*cartItem.price)/100))| currency:'USD':true  }}</strong>
+  </ng-template>
+</div>

@@ -1,0 +1,22 @@
+<div class="card filters">
+
+  <div class="card-header">
+    <strong>Filters</strong>
+  </div>
+
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label for="from">From</label>
+        <input class="form-control"  id="from" name="PriceFrom" #PiceFrom="ngModel" [(ngModel)]="PriceFrom" >
+      </div>
+      <div class="form-group">
+        <label for="to">To</label>
+        <input type="number" id="to" class="form-control" name="PriceTo"  #PiceTo="ngModel"[(ngModel)]="PriceTo">
+      </div>
+
+      <button class="btn btn-primary btn-block btn-sm"(click)="FilterProducts()">Filter by Price</button>
+      <button class="btn btn-primary btn-block btn-sm"(click)="FilterProducts()" >Clear Filter</button>
+    </form>
+  </div>
+</div>
